@@ -3,14 +3,9 @@
       <%= form.check_box :status, 
           class: "h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer",
           onchange: "this.form.requestSubmit()",
-          "data-testid": "todo-checkbox" %>
+          "data-testid": "quest-checkbox" %>
     <% end %>
-  <div>
-    <strong class="block font-medium mb-1">Name:</strong>
+  <div class="<%= quest.status? ? 'line-through text-gray-500' : 'text-gray-900' %> transition-all duration-200 text-lg font-medium ml-4" data-testid="todo-name">
     <%= quest.name %>
-  </div>
-  <div>
-    <strong class="block font-medium mb-1">Status:</strong>
-    <%= quest.status? ? "Yes" : "No" %>
   </div>
 </div>
