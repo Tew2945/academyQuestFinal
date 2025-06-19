@@ -6,8 +6,22 @@
   <% end %>
 
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Quests</h1>
-    <%= link_to "New quest", new_quest_path, class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium" %>
+    <h1 class="font-bold text-4xl">Tew's Quests</h1>
+  </div>
+
+  <div class="mb-6 bg-gray-50 p-4 rounded-lg">
+    <%= form_with(model: Quest.new, local: false, class: "flex gap-3", html: { "data-testid": "Quest-form" }) do |form| %>
+      <div class="flex-1">
+        <%= form.text_field :name, 
+            placeholder: "Add a new Quests...", 
+            class: "w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent",
+            "data-testid": "quest-input",
+            required: true %>
+      </div>
+      <%= form.submit "Add Quest", 
+          class: "px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors cursor-pointer",
+          "data-testid": "add-quest-btn" %>
+    <% end %>
   </div>
 
   <div id="quests" class="min-w-full divide-y divide-gray-200 space-y-5">
