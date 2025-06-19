@@ -40,7 +40,8 @@ class QuestsController < ApplicationController
   def update
     respond_to do |format|
       if @quest.update(quest_params)
-        format.html { redirect_to @quest, notice: "Quest was successfully updated." }
+        format.turbo_stream
+        format.html { redirect_to quests_path, notice: "Quest was successfully updated." }
         format.json { render :show, status: :ok, location: @quest }
       else
         format.html { render :edit, status: :unprocessable_entity }

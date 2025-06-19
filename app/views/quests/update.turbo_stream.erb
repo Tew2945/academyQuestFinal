@@ -1,0 +1,3 @@
+<%= turbo_stream.replace @quest do %>
+  <%= render partial: "quest", locals: { quest: @quest } %>
+<% end %>
