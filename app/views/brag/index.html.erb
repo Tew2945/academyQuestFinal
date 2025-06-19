@@ -1,7 +1,5 @@
 <!-- Back button - completely separate from main content -->
-<div class="p-4">
-  <%= link_to "Back to Quest page", root_path, class: "rounded-md px-3.5 py-2.5 bg-blue-700 hover:bg-blue-800 inline-block font-medium text-white", "data-testid": "back-to-todos-btn" %>
-</div>
+
 
 <!-- Main content container -->
 <div class="p-4">
@@ -21,6 +19,9 @@
       <div class="flex flex-col">
         <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-8">
           <h1 class="font-bold text-3xl sm:text-4xl mb-4 sm:mb-0">My little 2025 Goals</h1>
+          <div class="p-4">
+  <%= link_to "Back to Quest page", root_path, class: "rounded-md px-3.5 py-2.5 bg-blue-700 hover:bg-blue-800 inline-block font-medium text-white", "data-testid": "back-to-todos-btn" %>
+</div>
         </div>
         <div class="space-y-6">
           <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6 border border-gray-100 w-full" data-testid="goal-section">
