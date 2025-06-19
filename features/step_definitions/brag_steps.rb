@@ -17,4 +17,4 @@ end
 
 Then("I should see a goal item with text {string}") do |text|
   expect(page).to have_css('[data-testid="goal-item"]', text: text)
-end 
+end

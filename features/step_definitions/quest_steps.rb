@@ -37,10 +37,10 @@ When('I click the checkbox with testid {string} for {string}') do |testid, quest
     checkbox = find("[data-testid='#{testid}']")
     checkbox.click
   end
-  
+
   # Wait a moment for the form submission to complete
   sleep(1)
-  
+
   # Verify the quest status changed in the database
   quest.reload
   expect(quest.status).to be true
