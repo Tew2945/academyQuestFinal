@@ -25,15 +25,7 @@
   </div>
 
   <div id="quests" class="min-w-full divide-y divide-gray-200 space-y-5">
-    <% if @quests.any? %>
-      <% @quests.each do |quest| %>
-        <div class="flex flex-col sm:flex-row justify-between items-center pb-5 sm:pb-0">
-          <%= render quest %>
-        </div>
-      <% end %>
-    <% else %>
-      <p class="text-center my-10">No quests found.</p>
-    <% end %>
+    <%= render partial: "quest", collection: @quests, as: :quest %>
   </div>
 
   <div class="flex gap-4 mt-8">
