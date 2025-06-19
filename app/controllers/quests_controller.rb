@@ -28,7 +28,6 @@ class QuestsController < ApplicationController
       if @quest.save
         format.turbo_stream
         format.html { redirect_to quests_path, notice: "Quest was successfully created." }
-        format.json { render :show, status: :created, location: @quest }
       else
         format.html { render :index, status: :unprocessable_entity }
         format.json { render json: @quest.errors, status: :unprocessable_entity }
