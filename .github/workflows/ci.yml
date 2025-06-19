@@ -85,12 +85,22 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+
       - name: Run tests
         env:
           RAILS_ENV: test
           DATABASE_URL: postgres://postgres:postgres@localhost:5432
           # REDIS_URL: redis://localhost:6379/0
         run: bin/rails db:test:prepare test test:system
+
+      - name: Run RSpec unit tests
+        run: bundle exec rspec spec/models
+
+      - name: Run RSpec integration tests
+        run: bundle exec rspec spec/requests
+
+      - name: Run Cucumber e2e tests
+        run: bundle exec cucumber
 
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4
