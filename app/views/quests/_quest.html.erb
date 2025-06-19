@@ -8,4 +8,7 @@
   <div class="<%= quest.status? ? 'line-through text-gray-500' : 'text-gray-900' %> transition-all duration-200 text-lg font-medium ml-4" data-testid="todo-name">
     <%= quest.name %>
   </div>
+  <div>
+    <%= button_to "Delete", quest, method: :delete, class: "rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium cursor-pointer", data: { testid: "delete-todo-btn"}  %>
+  </div>
 </div>
