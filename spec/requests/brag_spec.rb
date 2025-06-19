@@ -6,5 +6,10 @@ RSpec.describe "Brags", type: :request do
       get "/brag/index"
       expect(response).to have_http_status(:success)
     end
+
+    it "renders the brag page content" do
+      get "/brag/index"
+      expect(response.body).to include("My little 2025 Goals")
+    end
   end
 end
