@@ -1,5 +1,5 @@
 class QuestsController < ApplicationController
-
+  before_action :set_quest, only: [:update, :destroy]
 
   # GET /quests or /quests.json
   def index
@@ -16,8 +16,6 @@ class QuestsController < ApplicationController
         format.turbo_stream
         format.html { redirect_to quests_path, notice: "Quest was successfully created." }
       else
-        format.html { render :index, status: :unprocessable_entity }
-        format.json { render json: @quest.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -29,9 +27,6 @@ class QuestsController < ApplicationController
         format.turbo_stream
         format.html { redirect_to quests_path, notice: "Quest was successfully updated." }
         format.json { render :show, status: :ok, location: @quest }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @quest.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -50,7 +45,7 @@ class QuestsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_quest
-      @quest = Quest.find(params.expect(:id))
+      @quest = Quest.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
