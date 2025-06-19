@@ -12,11 +12,11 @@ Feature: Manage quests
     Then I should see a quest item with text "Learn Rails E2E"
 
   Scenario: Mark a quest as completed
-    Given I have a quest named "Complete Capybara Test"
-    When I click the checkbox with testid "quest-checkbox" for "Complete Capybara Test"
-    Then I should see the quest "Complete Capybara Test" as completed
+    Given I have a quest named "Complete Cucumber Test"
+    When I click the checkbox with testid "quest-checkbox" for "Complete Cucumber Test"
+    Then I should see the quest "Complete Cucumber Test" as completed
 
-  # Scenario: Delete a quest
-  #   Given I have a quest named "Delete Me"
-  #   When I click the button with testid "delete-todo-btn" for "Delete Me"
-  #   Then I should not see a todo item with text "Delete Me"
+  Scenario: Delete a quest
+    Given I have a quest named "Delete Me"
+    When I click the button with testid "delete-quest-btn" for "Delete Me"
+    Then I should not see a quest item with text "Delete Me"
