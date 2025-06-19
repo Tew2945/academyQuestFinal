@@ -13,6 +13,4 @@ RSpec.describe "quests/index", type: :view do
       )
     ])
   end
-
-
 end

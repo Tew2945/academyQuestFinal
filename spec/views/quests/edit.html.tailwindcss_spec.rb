@@ -11,6 +11,4 @@ RSpec.describe "quests/edit", type: :view do
   before(:each) do
     assign(:quest, quest)
   end
-
-
 end

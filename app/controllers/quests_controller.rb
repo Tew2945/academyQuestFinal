@@ -1,5 +1,5 @@
 class QuestsController < ApplicationController
-  before_action :set_quest, only: [:update, :destroy]
+  before_action :set_quest, only: [ :update, :destroy ]
 
   # GET /quests or /quests.json
   def index

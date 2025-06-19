@@ -7,5 +7,4 @@ RSpec.describe "quests/new", type: :view do
       status: false
     ))
   end
-
 end
