@@ -1,4 +1,4 @@
-<div id="<%= dom_id quest %>" class="w-full flex justify-between sm:w-auto my-5 space-y-5">
+<div id="quest_<%= quest.id %>" class="flex flex-row justify-between items-center bg-white p-4 rounded-lg shadow-sm" data-testid="quest-item">
   <div>
       <%= form_with(model: quest, local: false, class: "contents") do |form| %>
         <%= form.check_box :status, 

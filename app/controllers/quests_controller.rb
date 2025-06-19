@@ -22,13 +22,15 @@ class QuestsController < ApplicationController
   # POST /quests or /quests.json
   def create
     @quest = Quest.new(quest_params)
+    @quests = Quest.all
 
     respond_to do |format|
       if @quest.save
-        format.html { redirect_to @quest, notice: "Quest was successfully created." }
+        format.turbo_stream
+        format.html { redirect_to quests_path, notice: "Quest was successfully created." }
         format.json { render :show, status: :created, location: @quest }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :index, status: :unprocessable_entity }
         format.json { render json: @quest.errors, status: :unprocessable_entity }
       end
     end
@@ -65,6 +67,6 @@ class QuestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def quest_params
-      params.expect(quest: [ :name, :status ])
+      params.require(:quest).permit(:name, :status)
     end
 end
